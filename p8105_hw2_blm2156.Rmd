@@ -1,0 +1,10 @@
+---
+title: "Homework 2 (p8105)"
+author: "Britney Mazzetta (blm2156)"
+output: github_document
+---
+
+
+```{r setup, include = FALSE}
+library(tidyverse)
+```
