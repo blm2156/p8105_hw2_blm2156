@@ -13,4 +13,6 @@ prob1 = read_excel("./data/HealthyHarborWaterWheelTotals2018-7-28.xlsx", sheet =
 
 prob1 = janitor::clean_names(prob1)
 
+na.omit(prob1)
+
 ```
