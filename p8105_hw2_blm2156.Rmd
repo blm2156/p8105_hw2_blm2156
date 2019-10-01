@@ -23,12 +23,16 @@ na.omit(prob1)
 ```{r}
 precip2017 = read_excel("./data/HealthyHarborWaterWheelTotals2018-7-28.xlsx", sheet = "2017 Precipitation", range = "A2:B15")
 
+precip2017 = janitor::clean_names(precip2017)
+
 na.omit(precip2017)
 ```
 
 ## 2018 Precipitation
 ```{r}
 precip2018 = read_excel("./data/HealthyHarborWaterWheelTotals2018-7-28.xlsx", sheet = "2018 Precipitation", range = "A2:B15")
+
+precip2018 = janitor::clean_names(precip2018)
 
 na.omit(precip2018)
 ```
