@@ -9,5 +9,8 @@ output: github_document
 library(tidyverse)
 
 library(readxl)
-prob1 = read_excel("./data/HealthyHarborWaterWheelTotals2018-7-28.xlsx")
+prob1 = read_excel("./data/HealthyHarborWaterWheelTotals2018-7-28.xlsx", sheet = "Mr. Trash Wheel")
+
+prob1 = janitor::clean_names(prob1)
+
 ```
