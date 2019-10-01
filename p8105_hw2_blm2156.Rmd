@@ -4,8 +4,10 @@ author: "Britney Mazzetta (blm2156)"
 output: github_document
 ---
 
+# Problem 1
 
-```{r setup, include = FALSE}
+## Mr. Trash Wheel
+```{r}
 library(tidyverse)
 library(readxl)
 
