@@ -71,3 +71,17 @@ The total amount of precipitation is `r sum(pull(precip2017, total))`
 
 `r median(pull(prob1, sport_balls))`
 
+# Problem 2
+
+```{r}
+pols = 
+  read_csv("./data/pols-month.csv") %>%
+  janitor::clean_names() %>% 
+  separate(mon, c("year", "month", "day"), sep = "-")%>%
+  select(-"day")
+```
+
+
+
+
+
