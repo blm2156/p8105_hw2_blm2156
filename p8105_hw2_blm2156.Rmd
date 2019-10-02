@@ -78,10 +78,35 @@ pols =
   read_csv("./data/pols-month.csv") %>%
   janitor::clean_names() %>% 
   separate(mon, c("year", "month", "day"), sep = "-")%>%
-  select(-"day")
+  select(-"day")%>%
+  mutate(
+    month = as.numeric(month),
+    month = month.name[month]
+  ) #%>%
+  #President = if(prez_gop == 1){
+   # print("gop")
+   #       } else {
+   # print("dem")
+    #      }
+
 ```
 
 
+```{r}
+snp = 
+  read_csv("./data/snp.csv") %>%
+  janitor::clean_names() %>% 
+  separate(date, c("month", "day", "year"), sep = "/")%>%
+ select(year, month, -day, close)%>%
+  mutate(
+    month = as.numeric(month),
+    month = month.name[month],
+    year = as.numeric(year)
+  ) %>%
+  arrange(year, month)
+
+  
+```
 
 
 
