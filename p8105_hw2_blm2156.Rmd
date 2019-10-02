@@ -55,4 +55,19 @@ combined_data =
   
 ```
 
+## Paragraph
+
+`r nrow(precip2017)`
+`r nrow(precip2018)`
+`r nrow(combined_data)`
+
+`r median(pull(precip2017, total))`
+`r median(pull(precip2018, total))`
+`r median(pull(combined_data, total))`
+
+The total amount of precipitation is `r sum(pull(precip2017, total))`
+`r sum(pull(precip2018, total))`
+`r sum(pull(combined_data, total))`
+
+`r median(pull(prob1, sport_balls))`
 
