@@ -43,3 +43,12 @@ precip2018 =
     )
 ```
 
+## Combine Datasets
+
+```{r}
+combined_data =
+  bind_rows(precip2017, precip2018)
+  
+```
+
+
