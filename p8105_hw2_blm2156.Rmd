@@ -153,6 +153,11 @@ filter(gender == "male", rank == 1) %>%
       values_from = rank) %>%
  knitr::kable()
 ```
+```{r}
+babies_plot = filter(babies_data, ethnicity == "white non hispanic", year_of_birth == "2016", gender == "male")
+ggplot(babies_plot, aes(x = rank, y = count)) + geom_point()
+```
+
 
 
 
