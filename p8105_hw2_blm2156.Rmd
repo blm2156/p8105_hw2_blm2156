@@ -7,7 +7,7 @@ output: github_document
 # Problem 1
 
 ## Mr. Trash Wheel
-```{r}
+```{r, eval = TRUE}
 library(tidyverse)
 library(readxl)
 
@@ -124,7 +124,7 @@ snp_pols =
   left_join(pols, snp, by = c("year", "month"))
 
 prob2_full =
-  left_join(snp_pols, unemployment,  by = c("year", "month"))
+  left_join(snp_pols, unemployment, by = c("year", "month"))
 
 ```
 # Problem 3
@@ -135,6 +135,15 @@ baby_names_data = read_csv("./data/Popular_Baby_Names.csv") %>%
   janitor::clean_names() %>%
   mutate(ethnicity = recode(ethnicity, "ASIAN AND PACI" = "ASIAN AND PACIFIC ISLANDER", "BLACK NON HISP" = "BLACK NON HISPANIC", "WHITE NON HISP" = "WHITE NON HISPANIC")) %>%
   mutate(ethnicity = str_to_lower(ethnicity), gender = str_to_lower(gender), childs_first_name = str_to_lower(childs_first_name))
+```
+
+```{r, include = TRUE}
+baby_names_data %>%
+filter(childs_first_name == "olivia") %>%
+  select(-count) %>%
+  pivot_wider(names_from = year_of_birth,
+      values_from = rank)%>%
+  knitr::kable()
 ```
 
 
